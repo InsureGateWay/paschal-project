@@ -1,22 +1,36 @@
 export const navigation = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Leadership', path: '/leadership' },
-  { label: 'Programs', path: '/programs' },
-  { label: 'Partners', path: '/partners' },
-  { label: 'Our Model', path: '/our-model' },
-  { label: 'Impact', path: '/impact' },
+  {
+    label: 'About',
+    path: '/about',
+    children: [
+      { label: 'Governance & Principles', path: '/governance-principles' },
+      { label: 'Leadership', path: '/leadership' },
+      { label: 'Partners', path: '/partners' },
+      { label: 'Our Model', path: '/our-model' },
+    ],
+  },
+  {
+    label: 'Programs',
+    path: '/programs',
+    children: [{ label: 'Impact', path: '/impact' }],
+  },
+  { label: 'News & Insights', path: '/news-insights' },
   { label: 'Contribute', path: '/contribute' },
+  { label: 'Contact', path: '/contact' },
 ]
 
 export const footerLinks = [
   { label: 'Our Mission', path: '/about' },
+  { label: 'Governance Principles', path: '/governance-principles' },
   { label: 'Education Programs', path: '/programs' },
   { label: 'Funder Network', path: '/partners' },
   { label: 'Endowment Model', path: '/our-model' },
   { label: 'Founders', path: '/leadership' },
   { label: 'Impact Metrics', path: '/impact' },
+  { label: 'News & Insights', path: '/news-insights' },
   { label: 'Partner With Us', path: '/contribute' },
+  { label: 'Contact Governance', path: '/contact' },
 ]
 
 export const heroStats = [
@@ -136,6 +150,30 @@ export const contributionOptions = [
     detail: 'Co-design education initiatives with your institution or CSR program.',
   },
 ]
+
+export const partnerTypeOptions = [
+  'Individual Donor',
+  'Corporate CSR Partner',
+  'Community Association',
+  'Philanthropic Organization',
+  'International Donor Agency',
+]
+
+export const contactProfile = {
+  intro:
+    'AGLF facilitates the elicitation of fund objectives for major donors and coordinates with professional financial firms to execute our sovereign mandate.',
+  officeAddress: [
+    '8 The Green, STE B',
+    'Dover, County of Kent',
+    'Delaware, 19901',
+  ],
+  inquiryEmail: 'connect@aglf.foundation',
+  inquiryNote:
+    'For major donors interested in seeding Named Foundation Funds and long-term mission-aligned partnerships.',
+  financialPartnerTitle: 'Financial Service Partner',
+  financialPartnerNote:
+    'Legacy Foundation collaborates with reputable firms, including Fidelity Investments, to execute fund design and stewardship objectives.',
+}
 
 export const scholarshipTracks = [
   {

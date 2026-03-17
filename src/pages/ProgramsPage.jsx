@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { scholarshipEligibility, scholarshipTracks } from '../data/siteData'
 
 const priorityAreas = [
@@ -20,6 +21,17 @@ const priorityAreas = [
 ]
 
 function ProgramsPage() {
+  const carouselRef = useRef(null)
+
+  const scroll = (direction) => {
+    if (carouselRef.current) {
+      const scrollAmount = 350
+      const target = direction === 'left' ? 
+        carouselRef.current.scrollLeft - scrollAmount : 
+        carouselRef.current.scrollLeft + scrollAmount
+      carouselRef.current.scrollTo({ left: target, behavior: 'smooth' })
+    }
+  }
   return (
     <>
       <section className="page-banner muted">
@@ -35,23 +47,45 @@ function ProgramsPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container model-grid">
-          {priorityAreas.map((item, index) => (
-            <article
-              key={item.title}
-              className="model-card stagger-card"
-              style={{ '--delay': `${index * 0.08}s` }}
-            >
-              <span className="icon-dot" />
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
+      <section className="section" style={{ paddingBottom: '1.5rem' }}>
+        <div className="container">
+          <div className="carousel-container">
+            <div className="carousel-wrapper" ref={carouselRef}>
+              <div className="carousel-track">
+                {priorityAreas.map((item, index) => (
+                  <article
+                    key={item.title}
+                    className="model-card carousel-card"
+                    style={{ '--delay': `${index * 0.08}s` }}
+                  >
+                    <span className="icon-dot" />
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="carousel-controls">
+              <button 
+                className="carousel-arrow carousel-arrow-left" 
+                onClick={() => scroll('left')}
+                aria-label="Scroll left"
+              >
+                ‹
+              </button>
+              <button 
+                className="carousel-arrow carousel-arrow-right" 
+                onClick={() => scroll('right')}
+                aria-label="Scroll right"
+              >
+                ›
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="section muted">
+      <section className="section muted" style={{ paddingTop: '1.5rem' }}>
         <div className="container">
           <div className="section-header">
             <p className="eyebrow">Scholarship Initiative</p>
@@ -60,26 +94,35 @@ function ProgramsPage() {
             </h2>
           </div>
 
-          <div className="dual-card-grid">
-            {scholarshipTracks.map((track, index) => (
-              <article
-                key={track.title}
-                className="mission-card stagger-card"
-                style={{ '--delay': `${index * 0.08}s` }}
-              >
-                <h3>{track.title}</h3>
-                <p>{track.detail}</p>
-              </article>
-            ))}
-          </div>
+          <div className="schol-split">
+            <div className="schol-image">
+              <img
+                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80"
+                alt="Students supported by scholarship programme"
+              />
+            </div>
 
-          <div className="criteria-panel">
-            <h3>Eligibility Focus</h3>
-            <ul>
-              {scholarshipEligibility.map((item) => (
-                <li key={item}>{item}</li>
+            <div className="schol-cards">
+              {scholarshipTracks.map((track, index) => (
+                <article
+                  key={track.title}
+                  className="mission-card stagger-card"
+                  style={{ '--delay': `${index * 0.08}s` }}
+                >
+                  <h3>{track.title}</h3>
+                  <p>{track.detail}</p>
+                </article>
               ))}
-            </ul>
+
+              <div className="criteria-panel">
+                <h3>Eligibility Focus</h3>
+                <ul>
+                  {scholarshipEligibility.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
