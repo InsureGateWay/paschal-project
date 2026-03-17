@@ -9,20 +9,20 @@ function HomePage() {
         <div className="container hero-content">
           <p className="eyebrow on-dark">A Legacy for the Future</p>
           <h1>
-            Building Africa's
-            <span> Sovereign Future</span>
+            Empowering Africa Through
+            <span> Transformative Education</span>
           </h1>
           <p>
-            Inspired by sovereign wealth funds, we are building a sustainable
-            endowment to empower African development through transformational
-            education and world-class skill-building initiatives.
+            Afri-Global Legacy Foundation delivers sustainable funding and
+            innovation for education access, teacher development, and digital
+            learning across Africa.
           </p>
           <div className="hero-actions">
-            <Link className="aglf-btn" to="/contribute">
-              Join the Legacy
+            <Link className="aglf-btn" to="/programs">
+              Explore Programs
             </Link>
-            <Link className="aglf-btn secondary" to="/about">
-              Our Vision
+            <Link className="aglf-btn secondary" to="/partners">
+              Funder Network
             </Link>
           </div>
         </div>
@@ -45,8 +45,8 @@ function HomePage() {
               The Cycle of <span>Perpetual Impact</span>
             </h2>
             <p>
-              We aggregate long-term capital, invest globally and activate returns in
-              education systems that outlive every grant cycle.
+              We combine endowment financing with measurable program delivery to
+              support learning systems that outlive short grant cycles.
             </p>
           </div>
           <div className="model-grid">
@@ -70,11 +70,11 @@ function HomePage() {
           <div>
             <p className="eyebrow">Collective Mission</p>
             <h2>
-              A legacy forged in common purpose and institutional discipline.
+              Building equitable education systems for every learner in Africa.
             </h2>
           </div>
           <Link className="aglf-btn" to="/contribute">
-            Become a Visionary Partner
+            Partner With AGLF
           </Link>
         </div>
       </section>

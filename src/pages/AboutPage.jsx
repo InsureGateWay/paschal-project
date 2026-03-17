@@ -17,17 +17,16 @@ function AboutPage() {
           <div>
             <p className="eyebrow">Our Collective Mission</p>
             <h1>
-              A Legacy Forged in <span>Common Purpose.</span>
+              Our Foundation for <span>Education Equity.</span>
             </h1>
             <p>
-              The Africa-Global Legacy Foundation is not just a non-profit; it is a
-              financial movement. Founded by members of the African diaspora, we
-              recognized that charity provides relief, but endowments provide freedom.
+              Afri-Global Legacy Foundation exists to sustainably fund and support
+              transformative education initiatives across Africa.
             </p>
             <p>
-              By channeling global capital into a self-sustaining investment vehicle,
-              we ensure that the funding for African education is never subject to
-              political or economic volatility.
+              We work with communities, institutions, governments, and global funders
+              to create equitable access, strengthen teaching quality, and accelerate
+              digital learning adoption.
             </p>
             <div className="kpi-row">
               {aboutKpis.map((item) => (
@@ -61,15 +60,14 @@ function AboutPage() {
         <div className="container section-header centered">
           <p className="eyebrow">Leadership and Governance</p>
           <h2>
-            The Visionaries <span>Behind the Legacy.</span>
+            Governance Designed for <span>Accountability and Scale.</span>
           </h2>
           <p>
-            Led by a dedicated board of African diaspora leaders committed to
-            transforming the continent's educational landscape through institutional
-            excellence.
+            Our structure combines board oversight, an expert advisory council, and a
+            focused executive team to ensure transparency and measurable impact.
           </p>
           <Link className="aglf-btn" to="/leadership">
-            Meet the Leadership Team
+            View Leadership Structure
           </Link>
         </div>
       </section>

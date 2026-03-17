@@ -7,12 +7,11 @@ function LeadershipPage() {
         <div className="container banner-inner centered">
           <p className="eyebrow">Leadership and Governance</p>
           <h1>
-            The Visionaries <span>Behind the Legacy.</span>
+            Leadership and <span>Governance.</span>
           </h1>
           <p>
-            Led by a dedicated board of African diaspora leaders committed to
-            transforming the continent's educational landscape through institutional
-            excellence.
+            The foundation combines Board of Trustees oversight, advisory expertise,
+            and an executive team focused on programs, investments, and partnerships.
           </p>
         </div>
       </section>

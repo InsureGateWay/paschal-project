@@ -2,6 +2,8 @@ export const navigation = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Leadership', path: '/leadership' },
+  { label: 'Programs', path: '/programs' },
+  { label: 'Partners', path: '/partners' },
   { label: 'Our Model', path: '/our-model' },
   { label: 'Impact', path: '/impact' },
   { label: 'Contribute', path: '/contribute' },
@@ -9,22 +11,24 @@ export const navigation = [
 
 export const footerLinks = [
   { label: 'Our Mission', path: '/about' },
+  { label: 'Education Programs', path: '/programs' },
+  { label: 'Funder Network', path: '/partners' },
   { label: 'Endowment Model', path: '/our-model' },
   { label: 'Founders', path: '/leadership' },
-  { label: 'Impact', path: '/impact' },
-  { label: 'Partner', path: '/contribute' },
+  { label: 'Impact Metrics', path: '/impact' },
+  { label: 'Partner With Us', path: '/contribute' },
 ]
 
 export const heroStats = [
-  { value: '50+', label: 'Initiatives Planned' },
-  { value: '3', label: 'Diaspora Founders' },
-  { value: 'Infinity', label: 'Generational Impact' },
+  { value: '4', label: 'Core Education Priorities' },
+  { value: '7-10', label: 'Board Trustees Target' },
+  { value: '100M+', label: 'Planned Endowment Goal' },
 ]
 
 export const aboutKpis = [
-  { value: '100M+', label: 'Target Endowment' },
-  { value: '54', label: 'Nations Focused' },
-  { value: '3', label: 'Founding Visionaries' },
+  { value: '54', label: 'African Countries in Scope' },
+  { value: '3', label: 'Flagship Scholarship Tracks' },
+  { value: '5', label: 'Core Institutional Values' },
 ]
 
 export const missionVisionCards = [
@@ -32,38 +36,38 @@ export const missionVisionCards = [
     kind: 'mission',
     title: 'Mission',
     body:
-      "Building a sovereign wealth non-profit to perpetually fund Africa's most ambitious education and skill-building hubs.",
+      "To sustainably fund transformative education across Africa through equitable access, teacher development, and digital learning.",
   },
   {
     kind: 'vision',
     title: 'Vision',
     body:
-      "An Africa that powers the world's next industrial revolution through indigenous innovation and mastery.",
+      'A future where every child in Africa can access quality learning and drive sustainable development in their community.',
   },
 ]
 
 export const leadershipTeam = [
   {
     name: 'Pascal Umekwe',
-    role: 'President',
+    role: 'Executive Director',
     summary:
-      'A strategic visionary dedicated to institutionalizing African development through sustainable financial models and traditional wisdom.',
+      'Leads strategy, operations, and delivery of the foundation roadmap across countries and partner ecosystems.',
     image:
       'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=900&q=80',
   },
   {
     name: 'Terrence Oben',
-    role: 'Vice President and Treasurer',
+    role: 'Director of Investments and Sustainability',
     summary:
-      'Expert in fiscal stewardship and capital allocation, ensuring every dollar of the endowment drives maximum long-term impact for the continent.',
+      'Designs endowment and socially responsible investment strategy to create stable annual funding for programs.',
     image:
       'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
   },
   {
     name: 'Dimitri Yimga',
-    role: 'Secretary',
+    role: 'Director of Partnerships and Advocacy',
     summary:
-      "Champion of heritage and institutional excellence, overseeing the foundation's complex operations with a focus on cultural legacy.",
+      'Builds relationships with governments, NGOs, and global donors to scale education outcomes and policy influence.',
     image:
       'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80',
   },
@@ -71,48 +75,48 @@ export const leadershipTeam = [
 
 export const modelPillars = [
   {
-    title: 'Individual and Community',
+    title: 'Endowment Fund',
     body:
-      'Empowering everyday people and local groups to build a collective legacy through pooled long-horizon capital.',
+      'A diversified long-term investment portfolio designed to generate dependable annual returns for education programs.',
   },
   {
-    title: 'Corporate Partners',
+    title: 'Socially Responsible Investments',
     body:
-      'Strategic alliances with industry leaders to drive industrial-scale development and systems-level opportunity.',
+      'Capital allocation prioritizing sectors aligned with mission, including technology, energy transition, and learning infrastructure.',
   },
   {
-    title: 'Legacy LLC',
+    title: 'Revenue Diversification',
     body:
-      'Our core investment vehicle ensuring institutional stability, disciplined governance and measurable growth.',
+      'Corporate giving, philanthropy, social enterprise, and public campaigns to reduce dependence on a single source.',
   },
 ]
 
 export const cycleSteps = [
-  { title: 'Aggregate', subtitle: 'Capital Pooling' },
-  { title: 'Compounding', subtitle: 'Global Investment' },
-  { title: 'Activation', subtitle: 'Skill-Building' },
-  { title: 'Heritage', subtitle: 'Sustained Legacy' },
+  { title: 'Needs Assessment', subtitle: 'Research and Community Consultation' },
+  { title: 'Funding Allocation', subtitle: 'Priority Program Selection' },
+  { title: 'Program Delivery', subtitle: 'Local Implementation Partnerships' },
+  { title: 'M and E', subtitle: 'Measure, Learn, and Improve' },
 ]
 
 export const impactPrograms = [
   {
-    title: 'Digital Horizons',
+    title: 'Access to Education',
     description:
-      'Bootcamps and practical infrastructure to place African youth in frontier digital careers.',
+      'School construction, refurbishment, scholarship access, and enrollment drives for underserved communities.',
     image:
       'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
   },
   {
-    title: 'Green Engineering',
+    title: 'Teacher Development',
     description:
-      'Applied engineering tracks focused on renewable systems and resilient industrial capacity.',
+      'Pedagogy training, mentorship, and retention incentives to strengthen teaching quality in priority regions.',
     image:
       'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
   },
   {
-    title: 'Global Scholars',
+    title: 'Digital Learning Expansion',
     description:
-      'Advanced scholarship pipelines tied to research, innovation and enterprise outcomes.',
+      'Devices, local e-learning content, and school connectivity to improve outcomes and digital literacy.',
     image:
       'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80',
   },
@@ -120,15 +124,90 @@ export const impactPrograms = [
 
 export const contributionOptions = [
   {
-    title: 'One-time Legacy Gift',
-    detail: 'Direct contribution to the core endowment fund.',
+    title: 'Endowment Contribution',
+    detail: 'Fund the principal portfolio that sustains grants year after year.',
   },
   {
-    title: 'Community Pooled Funds',
-    detail: 'Collaborative giving models for groups and associations.',
+    title: 'Scholarship Sponsorship',
+    detail: 'Sponsor secondary and tertiary scholars in STEM, economics, and applied innovation.',
   },
   {
-    title: 'Corporate Matching',
-    detail: 'Strategic partnerships to multiply institutional impact.',
+    title: 'Strategic Partnership',
+    detail: 'Co-design education initiatives with your institution or CSR program.',
+  },
+]
+
+export const scholarshipTracks = [
+  {
+    title: 'Financial Support',
+    detail:
+      'Full or partial tuition, books, accommodation support, and learning technology for selected students.',
+  },
+  {
+    title: 'Mentorship and Career Guidance',
+    detail:
+      'Scholars are paired with professionals and receive leadership, career readiness, and development coaching.',
+  },
+  {
+    title: 'Alumni and Community Impact',
+    detail:
+      'Graduates support future cohorts and participate in local development and peer mentorship initiatives.',
+  },
+]
+
+export const scholarshipEligibility = [
+  'Students from underserved or rural communities.',
+  'High-performing applicants with demonstrated financial need.',
+  'Priority for female students and students with disabilities.',
+  'Secondary finalists and tertiary students in recognized institutions.',
+  'Priority fields include STEM, economics, and development-focused disciplines.',
+]
+
+export const governanceRoles = [
+  'Board of Trustees: strategic oversight, financial accountability, mission alignment.',
+  'Advisory Council: external expertise on education, investment, and regional priorities.',
+  'Executive Team: programs, investments, monitoring and evaluation, and partnerships.',
+]
+
+export const impactMetrics = [
+  { label: 'Enrollment Growth', detail: 'Increase in school enrollment in target communities.' },
+  { label: 'Scholarships Awarded', detail: 'Number of students supported across secondary and tertiary levels.' },
+  { label: 'Teachers Trained', detail: 'Educators trained with measurable classroom improvement outcomes.' },
+  { label: 'Digital Access', detail: 'Schools equipped with devices and improved internet connectivity.' },
+]
+
+export const funderGroups = [
+  {
+    title: 'Philanthropists and Foundations',
+    detail:
+      'Engage values-aligned global philanthropies through tailored concept notes and measurable impact plans.',
+  },
+  {
+    title: 'International Donors',
+    detail:
+      'Collaborate with multilateral and bilateral organizations funding system-wide education transformation.',
+  },
+  {
+    title: 'Corporate CSR Networks',
+    detail:
+      'Activate strategic CSR partnerships focused on digital learning, employability, and youth opportunity.',
+  },
+]
+
+export const partnerHighlights = [
+  {
+    title: 'Local Ecosystem Partners',
+    detail:
+      'African Union CESA networks, local education NGOs, community institutions, and chambers of commerce.',
+  },
+  {
+    title: 'International Collaborators',
+    detail:
+      'UN agencies, global education organizations, and social justice foundations supporting equitable access.',
+  },
+  {
+    title: 'Engagement Formats',
+    detail:
+      'Annual funder summits, regional workshops, webinars, newsletters, and one-on-one strategic meetings.',
   },
 ]

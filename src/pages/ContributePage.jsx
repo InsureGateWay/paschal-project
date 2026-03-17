@@ -14,10 +14,9 @@ function ContributePage() {
             Join the <span>Legacy</span>
           </h1>
           <p className="contribute-copy">
-            Whether you are an individual wanting to give back to your roots, a
-            community leader organizing for growth, or a corporate partner looking for
-            strategic impact, your contribution builds the foundation of Africa's
-            tomorrow.
+            Whether you are an individual donor, institution, or corporate CSR team,
+            your contribution helps deliver scholarships, teacher training, digital
+            learning tools, and policy advocacy across underserved communities.
           </p>
 
           <div className="benefit-list">
@@ -59,7 +58,7 @@ function ContributePage() {
           </select>
 
           <button type="submit" className="aglf-btn">
-            Continue to Contribution
+            Submit Partnership Interest
           </button>
           <p className="form-note">
             AGLF is a registered 501(c)(3) organization. Contributions may be

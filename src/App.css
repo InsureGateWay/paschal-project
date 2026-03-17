@@ -748,6 +748,28 @@ p {
   color: #718093;
 }
 
+.criteria-panel {
+  margin-top: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  padding: 1rem 1.1rem;
+}
+
+.criteria-panel h3 {
+  margin-bottom: 0.55rem;
+}
+
+.criteria-panel ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.criteria-panel li + li {
+  margin-top: 0.4rem;
+}
+
 .site-footer {
   margin-top: 0.9rem;
   background: linear-gradient(140deg, #051237, #071a4a 52%, #07253e);

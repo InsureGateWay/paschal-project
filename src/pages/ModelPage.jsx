@@ -7,12 +7,11 @@ function ModelPage() {
         <div className="container banner-inner centered">
           <p className="eyebrow">Our Model</p>
           <h1>
-            Our Sovereign <span>Wealth Blueprint.</span>
+            Sustainable Funding <span>Blueprint.</span>
           </h1>
           <p>
-            Charity creates dependency. Endowments create sovereignty. We apply the
-            same discipline as a national wealth fund to solve Africa's education
-            deficit permanently.
+            We combine endowment returns, socially responsible investments, and
+            diversified partnerships to finance education initiatives over the long term.
           </p>
         </div>
       </section>
@@ -35,7 +34,7 @@ function ModelPage() {
 
       <section className="section">
         <div className="container cycle-board reveal">
-          <h2>The Cycle of Perpetual Impact</h2>
+          <h2>Operational Cycle for Lasting Impact</h2>
           <div className="cycle-steps">
             {cycleSteps.map((step) => (
               <article key={step.title}>
@@ -46,8 +45,8 @@ function ModelPage() {
             ))}
           </div>
           <p className="cycle-note">
-            Unlike traditional non-profits, our principal investment remains
-            untouched, funding Africa's future through interest alone.
+            Data-driven monitoring and evaluation allows us to refine programs,
+            improve outcomes, and strengthen stakeholder trust each cycle.
           </p>
         </div>
       </section>

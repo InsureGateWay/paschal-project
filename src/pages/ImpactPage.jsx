@@ -1,4 +1,5 @@
-import { impactPrograms } from '../data/siteData'
+import { Link } from 'react-router-dom'
+import { impactMetrics, impactPrograms } from '../data/siteData'
 
 function ImpactPage() {
   return (
@@ -8,21 +9,31 @@ function ImpactPage() {
           <div>
             <p className="eyebrow">Results and Data</p>
             <h1>
-              Fueling the <span>Knowledge Engine.</span>
+              Measuring What <span>Matters Most.</span>
             </h1>
             <p>
-              We measure success not by donations received, but by the industrial-
-              grade competencies built within African communities.
+              We track enrollment growth, scholarships delivered, teachers trained,
+              and digital access expansion to continuously improve program design.
             </p>
           </div>
-          <a
-            href="https://reporting.icd.gov.ae/2024/"
-            target="_blank"
-            rel="noreferrer"
-            className="report-button"
-          >
-            Read Global Impact Report
-          </a>
+          <Link to="/partners" className="report-button">
+            View Funder Engagement Model
+          </Link>
+        </div>
+      </section>
+
+      <section className="section muted">
+        <div className="container model-grid">
+          {impactMetrics.map((metric, index) => (
+            <article
+              key={metric.label}
+              className="model-card stagger-card"
+              style={{ '--delay': `${index * 0.08}s` }}
+            >
+              <h3>{metric.label}</h3>
+              <p>{metric.detail}</p>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -7,6 +7,8 @@ import ImpactPage from './pages/ImpactPage'
 import LeadershipPage from './pages/LeadershipPage'
 import ModelPage from './pages/ModelPage'
 import NotFoundPage from './pages/NotFoundPage'
+import PartnersPage from './pages/PartnersPage'
+import ProgramsPage from './pages/ProgramsPage'
 import './App.css'
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
 
         <Route path="/about" element={<AboutPage />} />
         <Route path="/leadership" element={<LeadershipPage />} />
+        <Route path="/programs" element={<ProgramsPage />} />
+        <Route path="/partners" element={<PartnersPage />} />
         <Route path="/our-model" element={<ModelPage />} />
         <Route path="/impact" element={<ImpactPage />} />
         <Route path="/contribute" element={<ContributePage />} />
