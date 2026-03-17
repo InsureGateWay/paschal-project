@@ -31,19 +31,27 @@ function GovernancePrinciplesPage() {
   return (
     <>
       <section className="gov-v2-hero reveal">
-        <div className="gov-v2-hero-bg" aria-hidden="true" />
+        <div className="gov-v2-hero-media" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80"
+            alt=""
+          />
+          <div className="gov-v2-hero-overlay" />
+        </div>
 
-        <div className="container gov-v2-hero-inner">
-          <p className="eyebrow on-dark">Transparency and Accountability</p>
-          <h1>
-            The Santiago <br />
-            <span>Framework.</span>
-          </h1>
-          <p className="gov-v2-hero-lead">
-            AGLF operates under a rigorous governance framework inspired by the
-            Santiago Principles (GAPP), ensuring institutional-grade stewardship
-            of foundation assets.
-          </p>
+        <div className="container gov-v2-hero-content">
+          <div className="gov-v2-hero-copy">
+            <p className="eyebrow on-dark">Transparency and Accountability</p>
+            <h1>
+              The Santiago <br />
+              <span>Framework.</span>
+            </h1>
+            <p className="gov-v2-hero-lead">
+              AGLF operates under a rigorous governance framework inspired by
+              the Santiago Principles (GAPP), ensuring institutional-grade
+              stewardship of foundation assets.
+            </p>
+          </div>
         </div>
       </section>
 

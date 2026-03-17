@@ -22,7 +22,7 @@ export const navigation = [
 
 export const footerLinks = [
   { label: 'Our Mission', path: '/about' },
-  { label: 'Governance Principles', path: '/governance-principles' },
+  { label: 'Governance', path: '/governance-principles' },
   { label: 'Education Programs', path: '/programs' },
   { label: 'Funder Network', path: '/partners' },
   { label: 'Endowment Model', path: '/our-model' },
