@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { scholarshipEligibility, scholarshipTracks } from '../data/siteData'
 
 const priorityAreas = [
@@ -22,6 +22,54 @@ const priorityAreas = [
 
 function ProgramsPage() {
   const carouselRef = useRef(null)
+  const scholCardsRef = useRef(null)
+  const [scholImageHeight, setScholImageHeight] = useState(null)
+
+  useEffect(() => {
+    if (!scholCardsRef.current || typeof window === 'undefined') {
+      return undefined
+    }
+
+    const mediaQuery = window.matchMedia('(max-width: 900px)')
+
+    const updateScholHeight = () => {
+      if (mediaQuery.matches || !scholCardsRef.current) {
+        setScholImageHeight(null)
+        return
+      }
+
+      const nextHeight = Math.ceil(scholCardsRef.current.getBoundingClientRect().height)
+      setScholImageHeight(nextHeight)
+    }
+
+    updateScholHeight()
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateScholHeight()
+    })
+
+    resizeObserver.observe(scholCardsRef.current)
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', updateScholHeight)
+    } else {
+      mediaQuery.addListener(updateScholHeight)
+    }
+
+    window.addEventListener('resize', updateScholHeight)
+
+    return () => {
+      resizeObserver.disconnect()
+
+      if (mediaQuery.addEventListener) {
+        mediaQuery.removeEventListener('change', updateScholHeight)
+      } else {
+        mediaQuery.removeListener(updateScholHeight)
+      }
+
+      window.removeEventListener('resize', updateScholHeight)
+    }
+  }, [])
 
   const scroll = (direction) => {
     if (carouselRef.current) {
@@ -95,14 +143,17 @@ function ProgramsPage() {
           </div>
 
           <div className="schol-split">
-            <div className="schol-image">
+            <div
+              className="schol-image"
+              style={scholImageHeight ? { height: `${scholImageHeight}px` } : undefined}
+            >
               <img
                 src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80"
                 alt="Students supported by scholarship programme"
               />
             </div>
 
-            <div className="schol-cards">
+            <div className="schol-cards" ref={scholCardsRef}>
               {scholarshipTracks.map((track, index) => (
                 <article
                   key={track.title}

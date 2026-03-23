@@ -1736,3 +1736,63 @@
     align-items: flex-start;
   }
 }
+
+/* Programs page responsiveness */
+.schol-split {
+  align-items: stretch;
+}
+
+.schol-image {
+  aspect-ratio: auto;
+}
+
+.schol-cards {
+  height: auto;
+  max-height: unset;
+  overflow-y: visible;
+  padding-right: 0;
+}
+
+@media (max-width: 900px) {
+  .schol-image {
+    height: auto;
+    min-height: unset;
+    max-height: 360px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .schol-cards {
+    height: auto;
+    max-height: unset;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel-card {
+    flex: 0 0 clamp(230px, 78vw, 320px);
+    width: clamp(230px, 78vw, 320px);
+  }
+
+  .carousel-track {
+    gap: 0.72rem;
+  }
+
+  .carousel-controls {
+    gap: 0.35rem;
+  }
+
+  .carousel-arrow {
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .carousel-card {
+    flex: 0 0 calc(100vw - 2rem);
+    width: calc(100vw - 2rem);
+  }
+}
