@@ -1603,3 +1603,136 @@
     width: 100%;
   }
 }
+
+@media (max-width: 390px) {
+  .container {
+    width: min(1180px, calc(100% - 1rem));
+  }
+
+  .section,
+  .page-banner {
+    padding: 2rem 0;
+  }
+
+  h1 {
+    font-size: clamp(1.7rem, 9vw, 2.2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .brand {
+    min-width: 0;
+    max-width: calc(100% - 3rem);
+  }
+
+  .brand-text {
+    font-size: 0.92rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .main-navigation {
+    padding: 0 0.5rem 0.6rem;
+  }
+
+  .nav-list {
+    padding: 0.45rem;
+    gap: 0.2rem;
+  }
+
+  .nav-link {
+    font-size: 0.86rem;
+    padding: 0.58rem 0.7rem;
+  }
+
+  .nav-submenu {
+    padding-left: 0.45rem;
+  }
+
+  .hero-section {
+    min-height: calc(100svh - 4rem);
+  }
+
+  .hero-content {
+    padding-top: 2.1rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    gap: 0.55rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .hero-stats article:last-child {
+    grid-column: auto;
+  }
+
+  .hero-stats article {
+    padding: 0.65rem 0.7rem;
+    border-radius: 0.85rem;
+  }
+
+  .impact-v2-hero {
+    padding-top: 2.3rem;
+  }
+
+  .impact-v2-map {
+    min-height: 260px;
+    border-radius: 1.2rem;
+  }
+
+  .impact-v2-market-note {
+    left: 0.65rem;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .impact-v2-story-media {
+    border-radius: 1rem;
+  }
+
+  .impact-v2-story-tag {
+    top: 0.65rem;
+    left: 0.65rem;
+    font-size: 0.52rem;
+    padding: 0.28rem 0.48rem;
+  }
+
+  .story-image {
+    min-height: 280px;
+  }
+
+  .model-card,
+  .impact-card,
+  .mission-card,
+  .team-card,
+  .contrib-form-card {
+    border-radius: 1.05rem;
+    padding: 1rem;
+  }
+
+  .impact-card {
+    min-height: 360px;
+  }
+
+  .callout-inner {
+    border-radius: 1.2rem;
+    padding: 1rem;
+  }
+
+  .contrib-named-threshold {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
