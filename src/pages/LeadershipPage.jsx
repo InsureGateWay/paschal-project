@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { leadershipTeam } from '../data/siteData'
 
 function LeadershipPage() {

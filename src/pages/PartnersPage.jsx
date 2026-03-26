@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { funderGroups, partnerHighlights } from '../data/siteData'
 
 const communicationAssets = [

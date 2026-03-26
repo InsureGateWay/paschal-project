@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { contributionOptions } from '../data/siteData'
 
 const AMOUNTS = [100, 500, 1000]

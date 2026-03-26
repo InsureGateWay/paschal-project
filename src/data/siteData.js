@@ -80,8 +80,7 @@ export const leadershipTeam = [
     role: 'Director of Partnerships and Advocacy',
     summary:
       'Builds relationships with governments, NGOs, and global donors to scale education outcomes and policy influence.',
-    image:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80',
+    image: '/dimitri-yimga.jfif',
   },
 ]
 

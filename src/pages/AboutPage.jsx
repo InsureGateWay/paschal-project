@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { aboutKpis, leadershipTeam, missionVisionCards } from '../data/siteData'
 
