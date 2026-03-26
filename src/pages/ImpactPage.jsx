@@ -38,6 +38,7 @@ const caseStudies = [
 ]
 
 function ImpactPage() {
+  useEffect(() => { document.title = 'AGLF Foundation | Impact' }, [])
   return (
     <>
       <section className="impact-v2-hero">

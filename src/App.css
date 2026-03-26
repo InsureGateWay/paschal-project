@@ -1796,3 +1796,68 @@
     width: calc(100vw - 2rem);
   }
 }
+
+/* Programs carousel overrides */
+.carousel-container {
+  gap: 0.85rem;
+}
+
+.carousel-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 0.15rem;
+}
+
+.carousel-track {
+  min-width: 100%;
+  padding: 0.2rem 0.15rem 0.35rem;
+}
+
+.carousel-card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.carousel-arrow {
+  border: 1px solid rgba(12, 24, 44, 0.1);
+  background: #ffffff;
+  box-shadow: var(--shadow-soft);
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #f7fbf9;
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.42;
+  cursor: default;
+  box-shadow: none;
+}
+
+@media (max-width: 700px) {
+  .carousel-wrapper {
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.75rem;
+  }
+
+  .carousel-track {
+    padding: 0.1rem 0.75rem 0.25rem;
+  }
+
+  .carousel-controls {
+    display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .carousel-wrapper {
+    scroll-padding-inline: 0.5rem;
+  }
+
+  .carousel-track {
+    padding-inline: 0.5rem;
+  }
+}

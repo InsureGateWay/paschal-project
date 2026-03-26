@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 function NotFoundPage() {
+  useEffect(() => { document.title = 'AGLF Foundation | Not Found' }, [])
   return (
     <section className="section reveal not-found-wrap">
       <div className="container section-header centered">

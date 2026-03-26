@@ -1,6 +1,7 @@
 import { cycleSteps, modelPillars } from '../data/siteData'
 
 function ModelPage() {
+  useEffect(() => { document.title = 'AGLF Foundation | Our Model' }, [])
   return (
     <>
       <section className="page-banner">

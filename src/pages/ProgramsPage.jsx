@@ -24,6 +24,9 @@ function ProgramsPage() {
   const carouselRef = useRef(null)
   const scholCardsRef = useRef(null)
   const [scholImageHeight, setScholImageHeight] = useState(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  useEffect(() => { document.title = 'AGLF Foundation | Programs' }, [])
+  const [canScrollRight, setCanScrollRight] = useState(true)
 
   useEffect(() => {
     if (!scholCardsRef.current || typeof window === 'undefined') {
@@ -71,15 +74,42 @@ function ProgramsPage() {
     }
   }, [])
 
+  useEffect(() => {
+    if (!carouselRef.current || typeof window === 'undefined') {
+      return undefined
+    }
+
+    const node = carouselRef.current
+
+    const updateScrollState = () => {
+      const maxScrollLeft = node.scrollWidth - node.clientWidth
+      setCanScrollLeft(node.scrollLeft > 8)
+      setCanScrollRight(node.scrollLeft < maxScrollLeft - 8)
+    }
+
+    updateScrollState()
+
+    node.addEventListener('scroll', updateScrollState, { passive: true })
+    window.addEventListener('resize', updateScrollState)
+
+    return () => {
+      node.removeEventListener('scroll', updateScrollState)
+      window.removeEventListener('resize', updateScrollState)
+    }
+  }, [])
+
   const scroll = (direction) => {
     if (carouselRef.current) {
-      const scrollAmount = 350
-      const target = direction === 'left' ? 
-        carouselRef.current.scrollLeft - scrollAmount : 
+      const scrollAmount = Math.max(260, Math.floor(carouselRef.current.clientWidth * 0.82))
+      const target = direction === 'left'
+        ? carouselRef.current.scrollLeft - scrollAmount
+        :
         carouselRef.current.scrollLeft + scrollAmount
+
       carouselRef.current.scrollTo({ left: target, behavior: 'smooth' })
     }
   }
+
   return (
     <>
       <section className="page-banner muted">
@@ -114,17 +144,19 @@ function ProgramsPage() {
               </div>
             </div>
             <div className="carousel-controls">
-              <button 
-                className="carousel-arrow carousel-arrow-left" 
+              <button
+                className="carousel-arrow carousel-arrow-left"
                 onClick={() => scroll('left')}
                 aria-label="Scroll left"
+                disabled={!canScrollLeft}
               >
                 ‹
               </button>
-              <button 
-                className="carousel-arrow carousel-arrow-right" 
+              <button
+                className="carousel-arrow carousel-arrow-right"
                 onClick={() => scroll('right')}
                 aria-label="Scroll right"
+                disabled={!canScrollRight}
               >
                 ›
               </button>

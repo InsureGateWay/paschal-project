@@ -28,6 +28,7 @@ const gappItems = [
 ]
 
 function GovernancePrinciplesPage() {
+  useEffect(() => { document.title = 'AGLF Foundation | Governance Principles' }, [])
   return (
     <>
       <section className="gov-v2-hero reveal">

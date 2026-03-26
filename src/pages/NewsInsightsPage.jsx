@@ -54,6 +54,7 @@ const insightCards = [
 ]
 
 function NewsInsightsPage() {
+  useEffect(() => { document.title = 'AGLF Foundation | News & Insights' }, [])
   const [activeFilter, setActiveFilter] = useState('All Insights')
 
   const filteredInsights = useMemo(() => {

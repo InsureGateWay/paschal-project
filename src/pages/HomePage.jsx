@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { heroStats, modelPillars } from '../data/siteData'
 
 function HomePage() {
+  useEffect(() => { document.title = 'AGLF Foundation | Home' }, [])
   return (
     <>
       <section className="hero-section reveal">

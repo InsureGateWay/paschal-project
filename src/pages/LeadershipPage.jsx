@@ -1,6 +1,7 @@
 import { leadershipTeam } from '../data/siteData'
 
 function LeadershipPage() {
+  useEffect(() => { document.title = 'AGLF Foundation | Leadership' }, [])
   return (
     <>
       <section className="page-banner">

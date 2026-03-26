@@ -7,6 +7,7 @@ const communicationAssets = [
 ]
 
 function PartnersPage() {
+  useEffect(() => { document.title = 'AGLF Foundation | Partners' }, [])
   return (
     <>
       <section className="page-banner">

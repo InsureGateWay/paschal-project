@@ -66,16 +66,14 @@ export const leadershipTeam = [
     role: 'Executive Director',
     summary:
       'Leads strategy, operations, and delivery of the foundation roadmap across countries and partner ecosystems.',
-    image:
-      'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=900&q=80',
+    image: '/pascal-umekwe.jpg',
   },
   {
     name: 'Terrence Oben',
     role: 'Director of Investments and Sustainability',
     summary:
       'Designs endowment and socially responsible investment strategy to create stable annual funding for programs.',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
+    image: '/terrence-oben.jpg',
   },
   {
     name: 'Dimitri Yimga',

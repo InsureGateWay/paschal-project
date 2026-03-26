@@ -20,6 +20,7 @@ const governancePrinciples = [
 ]
 
 function AboutPage() {
+  useEffect(() => { document.title = 'AGLF Foundation | About' }, [])
   const mission = missionVisionCards.find((card) => card.kind === 'mission')
   const vision = missionVisionCards.find((card) => card.kind === 'vision')
 

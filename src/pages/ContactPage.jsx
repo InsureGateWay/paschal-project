@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { contactProfile, partnerTypeOptions } from '../data/siteData'
 
 function ContactPage() {
+  useEffect(() => { document.title = 'AGLF Foundation | Contact' }, [])
   const handleSubmit = (event) => {
     event.preventDefault()
   }

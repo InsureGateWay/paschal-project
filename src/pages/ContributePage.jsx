@@ -11,6 +11,7 @@ const TABS = [
 function ContributePage() {
   const [activeTab, setActiveTab] = useState('one-time')
   const [activeAmount, setActiveAmount] = useState(500)
+  useEffect(() => { document.title = 'AGLF Foundation | Contribute' }, [])
   const [customAmount, setCustomAmount] = useState('')
 
   return (
