@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { navigation } from '../data/siteData'
+import { useContent } from '../hooks/useContent'
+import { getNavigation } from '../services/contentService'
+import { navigation as fallbackNav } from '../data/siteData'
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const { data: navigation } = useContent(getNavigation, fallbackNav)
 
   const isItemActive = (item) => {
     if (location.pathname === item.path) {

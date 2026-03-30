@@ -1,6 +1,12 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { aboutKpis, leadershipTeam, missionVisionCards } from '../data/siteData'
+import { useContent } from '../hooks/useContent'
+import { getCollection } from '../services/contentService'
+import {
+  aboutKpis as fallbackKpis,
+  leadershipTeam as fallbackTeam,
+  missionVisionCards as fallbackMV,
+} from '../data/siteData'
 
 const governancePrinciples = [
   {
@@ -22,6 +28,9 @@ const governancePrinciples = [
 
 function AboutPage() {
   useEffect(() => { document.title = 'AGLF Foundation | About' }, [])
+  const { data: aboutKpis } = useContent(() => getCollection('aboutKpis'), fallbackKpis)
+  const { data: leadershipTeam } = useContent(() => getCollection('leadershipTeam'), fallbackTeam)
+  const { data: missionVisionCards } = useContent(() => getCollection('missionVisionCards'), fallbackMV)
   const mission = missionVisionCards.find((card) => card.kind === 'mission')
   const vision = missionVisionCards.find((card) => card.kind === 'vision')
 

@@ -1,9 +1,15 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { contactProfile, partnerTypeOptions } from '../data/siteData'
+import { useContent } from '../hooks/useContent'
+import { getPage } from '../services/contentService'
+import { contactProfile as fallbackProfile, partnerTypeOptions as fallbackOptions } from '../data/siteData'
 
 function ContactPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Contact' }, [])
+  const { data: page } = useContent(() => getPage('contact'), {})
+  const contactProfile = page?.contactProfile ?? fallbackProfile
+  const partnerTypeOptions = page?.partnerTypeOptions ?? fallbackOptions
+
   const handleSubmit = (event) => {
     event.preventDefault()
   }

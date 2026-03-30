@@ -1,8 +1,12 @@
 import { useEffect } from 'react'
-import { cycleSteps, modelPillars } from '../data/siteData'
+import { useContent } from '../hooks/useContent'
+import { getCollection } from '../services/contentService'
+import { cycleSteps as fallbackCycle, modelPillars as fallbackPillars } from '../data/siteData'
 
 function ModelPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Our Model' }, [])
+  const { data: modelPillars } = useContent(() => getCollection('modelPillars'), fallbackPillars)
+  const { data: cycleSteps } = useContent(() => getCollection('cycleSteps'), fallbackCycle)
   return (
     <>
       <section className="page-banner">

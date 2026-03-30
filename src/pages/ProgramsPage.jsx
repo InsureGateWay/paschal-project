@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { scholarshipEligibility, scholarshipTracks } from '../data/siteData'
+import { useContent } from '../hooks/useContent'
+import { getCollection } from '../services/contentService'
+import {
+  scholarshipEligibility as fallbackElig,
+  scholarshipTracks as fallbackTracks,
+} from '../data/siteData'
 
 const priorityAreas = [
   {
@@ -27,6 +32,8 @@ function ProgramsPage() {
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   useEffect(() => { document.title = 'AGLF Foundation | Programs' }, [])
   const [canScrollRight, setCanScrollRight] = useState(true)
+  const { data: scholarshipTracks } = useContent(() => getCollection('scholarshipTracks'), fallbackTracks)
+  const { data: scholarshipEligibility } = useContent(() => getCollection('scholarshipEligibility'), fallbackElig)
 
   useEffect(() => {
     if (!scholCardsRef.current || typeof window === 'undefined') {

@@ -1,8 +1,12 @@
 import { useEffect } from 'react'
-import { leadershipTeam } from '../data/siteData'
+import { useContent } from '../hooks/useContent'
+import { getCollection } from '../services/contentService'
+import { leadershipTeam as fallback } from '../data/siteData'
 
 function LeadershipPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Leadership' }, [])
+  const { data: leadershipTeam } = useContent(() => getCollection('leadershipTeam'), fallback)
+
   return (
     <>
       <section className="page-banner">
