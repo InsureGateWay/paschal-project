@@ -49,3 +49,6 @@ coverage/
 *.tgz
 .cache/
 .turbo/
+
+.vercel
+.env*.local
