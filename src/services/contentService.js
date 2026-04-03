@@ -9,7 +9,7 @@ import * as fallback from '../data/siteData.js'
 
 const API_BASE =
   import.meta.env.VITE_API_BASE ||
-  'http://localhost:5001/sme-afrika/us-central1/api'
+  'http://localhost:5001'
 
 // Simple in-memory cache so repeated calls within a session don't re-fetch
 const cache = new Map()
