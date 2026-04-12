@@ -39,6 +39,13 @@ export const heroStats = [
   { value: '100M+', label: 'Planned Endowment Goal' },
 ]
 
+export const heroSlides = [
+  { url: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=80' },
+  { url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=80' },
+  { url: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1800&q=80' },
+  { url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=80' },
+]
+
 export const aboutKpis = [
   { value: '54', label: 'African Countries in Scope' },
   { value: '3', label: 'Flagship Scholarship Tracks' },
