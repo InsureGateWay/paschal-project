@@ -28,9 +28,8 @@ function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link to="/" className="brand" aria-label="AGLF Foundation" onClick={closeMobileMenu}>
-          <span className="brand-mark">A</span>
-          <span className="brand-text">AGLF Foundation</span>
+        <Link to="/" className="brand" aria-label="Afriglobal Legacy Foundation" onClick={closeMobileMenu}>
+          <img src="/unnamed.png" alt="Afriglobal Legacy Foundation" className="brand-logo" />
         </Link>
 
         <button
