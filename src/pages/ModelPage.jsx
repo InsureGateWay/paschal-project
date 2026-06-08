@@ -1,12 +1,15 @@
 import { useEffect } from 'react'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getCollection } from '../services/contentService'
 import { cycleSteps as fallbackCycle, modelPillars as fallbackPillars } from '../data/siteData'
 
 function ModelPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Our Model' }, [])
-  const { data: modelPillars } = useContent(() => getCollection('modelPillars'), fallbackPillars)
-  const { data: cycleSteps } = useContent(() => getCollection('cycleSteps'), fallbackCycle)
+  const { data: modelPillars, loading: modelPillarsLoading } = useContent(() => getCollection('modelPillars'), fallbackPillars)
+  const { data: cycleSteps, loading: cycleStepsLoading } = useContent(() => getCollection('cycleSteps'), fallbackCycle)
+  useContentLoading('model-page', modelPillarsLoading || cycleStepsLoading)
+
   return (
     <>
       <section className="page-banner">

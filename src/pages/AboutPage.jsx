@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getCollection } from '../services/contentService'
 import {
   aboutKpis as fallbackKpis,
@@ -28,9 +29,10 @@ const governancePrinciples = [
 
 function AboutPage() {
   useEffect(() => { document.title = 'AGLF Foundation | About' }, [])
-  const { data: aboutKpis } = useContent(() => getCollection('aboutKpis'), fallbackKpis)
-  const { data: leadershipTeam } = useContent(() => getCollection('leadershipTeam'), fallbackTeam)
-  const { data: missionVisionCards } = useContent(() => getCollection('missionVisionCards'), fallbackMV)
+  const { data: aboutKpis, loading: aboutKpisLoading } = useContent(() => getCollection('aboutKpis'), fallbackKpis)
+  const { data: leadershipTeam, loading: leadershipTeamLoading } = useContent(() => getCollection('leadershipTeam'), fallbackTeam)
+  const { data: missionVisionCards, loading: missionVisionCardsLoading } = useContent(() => getCollection('missionVisionCards'), fallbackMV)
+  useContentLoading('about-page', aboutKpisLoading || leadershipTeamLoading || missionVisionCardsLoading)
   const mission = missionVisionCards.find((card) => card.kind === 'mission')
   const vision = missionVisionCards.find((card) => card.kind === 'vision')
 

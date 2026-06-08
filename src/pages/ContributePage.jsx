@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getCollection } from '../services/contentService'
 import { contributionOptions as fallback } from '../data/siteData'
 
@@ -15,7 +16,8 @@ function ContributePage() {
   const [activeAmount, setActiveAmount] = useState(500)
   useEffect(() => { document.title = 'AGLF Foundation | Contribute' }, [])
   const [customAmount, setCustomAmount] = useState('')
-  const { data: contributionOptions } = useContent(() => getCollection('contributionOptions'), fallback)
+  const { data: contributionOptions, loading: contributionOptionsLoading } = useContent(() => getCollection('contributionOptions'), fallback)
+  useContentLoading('contribute-page', contributionOptionsLoading)
 
   return (
     <>

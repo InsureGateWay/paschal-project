@@ -1,11 +1,13 @@
 import { useEffect } from 'react'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getCollection } from '../services/contentService'
 import { leadershipTeam as fallback } from '../data/siteData'
 
 function LeadershipPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Leadership' }, [])
-  const { data: leadershipTeam } = useContent(() => getCollection('leadershipTeam'), fallback)
+  const { data: leadershipTeam, loading: leadershipTeamLoading } = useContent(() => getCollection('leadershipTeam'), fallback)
+  useContentLoading('leadership-page', leadershipTeamLoading)
 
   return (
     <>

@@ -1,12 +1,14 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getPage } from '../services/contentService'
 import { contactProfile as fallbackProfile, partnerTypeOptions as fallbackOptions } from '../data/siteData'
 
 function ContactPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Contact' }, [])
-  const { data: page } = useContent(() => getPage('contact'), {})
+  const { data: page, loading: pageLoading } = useContent(() => getPage('contact'), {})
+  useContentLoading('contact-page', pageLoading)
   const contactProfile = page?.contactProfile ?? fallbackProfile
   const partnerTypeOptions = page?.partnerTypeOptions ?? fallbackOptions
 

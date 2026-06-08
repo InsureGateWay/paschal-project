@@ -16,16 +16,9 @@ export function ContentLoadingProvider({ children }) {
 
   // Check if all critical components are loaded
   useEffect(() => {
-    const criticalComponents = ['header', 'footer']
-    const allCriticalLoaded = criticalComponents.every(
-      (id) => loadingStates[id] === false
-    )
-    
-    // Set ready only after critical components are loaded
-    // and a minimum time has passed to ensure data has been fetched
-    if (allCriticalLoaded && Object.keys(loadingStates).length > 0) {
-      setIsReady(true)
-    }
+    const values = Object.values(loadingStates)
+    const allLoaded = values.length > 0 && values.every((value) => value === false)
+    setIsReady(allLoaded)
   }, [loadingStates])
 
   return (

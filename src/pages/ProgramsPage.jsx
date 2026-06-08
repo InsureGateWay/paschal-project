@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getCollection } from '../services/contentService'
 import {
   scholarshipEligibility as fallbackElig,
@@ -32,8 +33,9 @@ function ProgramsPage() {
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   useEffect(() => { document.title = 'AGLF Foundation | Programs' }, [])
   const [canScrollRight, setCanScrollRight] = useState(true)
-  const { data: scholarshipTracks } = useContent(() => getCollection('scholarshipTracks'), fallbackTracks)
-  const { data: scholarshipEligibility } = useContent(() => getCollection('scholarshipEligibility'), fallbackElig)
+  const { data: scholarshipTracks, loading: scholarshipTracksLoading } = useContent(() => getCollection('scholarshipTracks'), fallbackTracks)
+  const { data: scholarshipEligibility, loading: scholarshipEligibilityLoading } = useContent(() => getCollection('scholarshipEligibility'), fallbackElig)
+  useContentLoading('programs-page', scholarshipTracksLoading || scholarshipEligibilityLoading)
 
   useEffect(() => {
     if (!scholCardsRef.current || typeof window === 'undefined') {

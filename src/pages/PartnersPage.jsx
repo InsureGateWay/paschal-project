@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getCollection } from '../services/contentService'
 import { funderGroups as fallbackFunders, partnerHighlights as fallbackHighlights } from '../data/siteData'
 
@@ -11,8 +12,9 @@ const communicationAssets = [
 
 function PartnersPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Partners' }, [])
-  const { data: funderGroups } = useContent(() => getCollection('funderGroups'), fallbackFunders)
-  const { data: partnerHighlights } = useContent(() => getCollection('partnerHighlights'), fallbackHighlights)
+  const { data: funderGroups, loading: funderGroupsLoading } = useContent(() => getCollection('funderGroups'), fallbackFunders)
+  const { data: partnerHighlights, loading: partnerHighlightsLoading } = useContent(() => getCollection('partnerHighlights'), fallbackHighlights)
+  useContentLoading('partners-page', funderGroupsLoading || partnerHighlightsLoading)
   return (
     <>
       <section className="page-banner">

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getPage } from '../services/contentService'
 
 const defaultFilters = ['All Insights', 'Press Releases', 'Model Updates', 'Impact Reports']
@@ -56,7 +57,8 @@ const defaultArticles = [
 
 function NewsInsightsPage() {
   useEffect(() => { document.title = 'AGLF Foundation | News & Insights' }, [])
-  const { data: page } = useContent(() => getPage('news-insights'), {})
+  const { data: page, loading: pageLoading } = useContent(() => getPage('news-insights'), {})
+  useContentLoading('news-insights-page', pageLoading)
   const [activeFilter, setActiveFilter] = useState('All Insights')
 
   const hero = page?.hero ?? {}

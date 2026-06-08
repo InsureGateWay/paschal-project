@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getPage, getCollection } from '../services/contentService'
 import { heroStats as fallbackStats, modelPillars as fallbackPillars, heroSlides as fallbackSlides } from '../data/siteData'
 
@@ -16,8 +17,9 @@ const pillarIcons = [
 
 function HomePage() {
   useEffect(() => { document.title = 'AGLF Foundation | Home' }, [])
-  const { data: page } = useContent(() => getPage('home'), {})
-  const { data: modelPillars } = useContent(() => getCollection('modelPillars'), fallbackPillars)
+  const { data: page, loading: pageLoading } = useContent(() => getPage('home'), {})
+  const { data: modelPillars, loading: modelPillarsLoading } = useContent(() => getCollection('modelPillars'), fallbackPillars)
+  useContentLoading('homepage', pageLoading || modelPillarsLoading)
 
   const hero = page?.hero ?? {}
   const heroStats = hero.stats || fallbackStats

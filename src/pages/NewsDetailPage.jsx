@@ -1,11 +1,13 @@
 import { useEffect, useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getPage } from '../services/contentService'
 
 function NewsDetailPage() {
   const { slug } = useParams()
-  const { data: page } = useContent(() => getPage('news-insights'), {})
+  const { data: page, loading: pageLoading } = useContent(() => getPage('news-insights'), {})
+  useContentLoading('news-detail-page', pageLoading)
 
   const articles = page?.articles ?? []
   const article = useMemo(
