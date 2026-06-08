@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useContent } from '../hooks/useContent'
-import { useContentLoading } from '../hooks/useContentLoading'
 import { getFooter } from '../services/contentService'
 import { footerLinks } from '../data/siteData'
 
@@ -15,10 +14,7 @@ const fallbackFooter = {
 }
 
 function Footer() {
-  const { data: footer, loading } = useContent(getFooter, fallbackFooter)
-  
-  // Track when footer has loaded
-  useContentLoading('footer', loading)
+  const { data: footer } = useContent(getFooter, fallbackFooter)
 
   return (
     <footer className="site-footer">
