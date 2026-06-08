@@ -23,18 +23,15 @@ function SiteLayout() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [location.pathname, location.hash])
 
-  // Show loading screen until content is ready
-  if (!isReady) {
-    return <LoadingScreen />
-  }
-
   return (
     <div className="site-shell">
       <Header />
-      <main className="site-main">
+      <main className="site-main" aria-busy={!isReady}>
         <Outlet />
       </main>
       <Footer />
+
+      {!isReady && <LoadingScreen />}
 
       <button type="button" className="chat-orb" aria-label="Open support chat">
         <span className="chat-orb-dot" />
