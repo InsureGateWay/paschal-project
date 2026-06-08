@@ -14,7 +14,15 @@ export function ContentLoadingProvider({ children }) {
     })
   }, [])
 
-  // Check if all critical components are loaded
+  const unregisterLoading = useCallback((componentId) => {
+    setLoadingStates((prev) => {
+      const updated = { ...prev }
+      delete updated[componentId]
+      return updated
+    })
+  }, [])
+
+  // Check if all registered components are loaded
   useEffect(() => {
     const values = Object.values(loadingStates)
     const allLoaded = values.length > 0 && values.every((value) => value === false)
@@ -22,7 +30,7 @@ export function ContentLoadingProvider({ children }) {
   }, [loadingStates])
 
   return (
-    <ContentLoadingContext.Provider value={{ registerLoading, isReady }}>
+    <ContentLoadingContext.Provider value={{ registerLoading, unregisterLoading, isReady }}>
       {children}
     </ContentLoadingContext.Provider>
   )

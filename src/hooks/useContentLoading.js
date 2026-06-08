@@ -16,5 +16,8 @@ export function useContentLoading(componentId, isLoading) {
 
   useEffect(() => {
     context.registerLoading(componentId, isLoading)
+    return () => {
+      context.unregisterLoading(componentId)
+    }
   }, [componentId, isLoading, context])
 }
