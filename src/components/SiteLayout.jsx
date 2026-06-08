@@ -1,10 +1,13 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import { ContentLoadingContext } from '../context/ContentLoadingContext'
+import LoadingScreen from './LoadingScreen'
 import Footer from './Footer'
 import Header from './Header'
 
 function SiteLayout() {
   const location = useLocation()
+  const { isReady } = useContext(ContentLoadingContext) || { isReady: false }
 
   useEffect(() => {
     if (location.hash) {
@@ -19,6 +22,11 @@ function SiteLayout() {
 
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [location.pathname, location.hash])
+
+  // Show loading screen until content is ready
+  if (!isReady) {
+    return <LoadingScreen />
+  }
 
   return (
     <div className="site-shell">

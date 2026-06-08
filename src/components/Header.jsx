@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useContent } from '../hooks/useContent'
+import { useContentLoading } from '../hooks/useContentLoading'
 import { getNavigation } from '../services/contentService'
 import { navigation as fallbackNav } from '../data/siteData'
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
-  const { data: navigation } = useContent(getNavigation, fallbackNav)
+  const { data: navigation, loading } = useContent(getNavigation, fallbackNav)
+  
+  // Track when header has loaded
+  useContentLoading('header', loading)
 
   const isItemActive = (item) => {
     if (location.pathname === item.path) {
