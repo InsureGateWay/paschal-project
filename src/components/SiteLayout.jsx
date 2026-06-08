@@ -2,9 +2,11 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Footer from './Footer'
 import Header from './Header'
+import { useContentLoadingContext } from '../context/ContentLoadingContext.jsx'
 
 function SiteLayout() {
   const location = useLocation()
+  const { isLoading } = useContentLoadingContext()
 
   useEffect(() => {
     if (location.hash) {
@@ -21,7 +23,14 @@ function SiteLayout() {
   }, [location.pathname, location.hash])
 
   return (
-    <div className="site-shell">
+    <div className={`site-shell${isLoading ? ' site-shell--loading' : ''}`} aria-busy={isLoading}>
+      {isLoading && (
+        <div className="loading-overlay" aria-live="polite">
+          <div className="loading-spinner" aria-hidden="true" />
+          <p>Loading content…</p>
+        </div>
+      )}
+
       <Header />
       <main className="site-main">
         <Outlet />

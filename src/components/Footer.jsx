@@ -14,7 +14,11 @@ const fallbackFooter = {
 }
 
 function Footer() {
-  const { data: footer } = useContent(getFooter, fallbackFooter)
+  const { data: footer, loading: footerLoading } = useContent(getFooter, fallbackFooter)
+
+  if (footerLoading || !footer) {
+    return null
+  }
 
   return (
     <footer className="site-footer">

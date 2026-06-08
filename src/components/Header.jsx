@@ -7,7 +7,7 @@ import { navigation as fallbackNav } from '../data/siteData'
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
-  const { data: navigation } = useContent(getNavigation, fallbackNav)
+  const { data: navigation, loading: navigationLoading } = useContent(getNavigation, fallbackNav)
 
   const isItemActive = (item) => {
     if (location.pathname === item.path) {
@@ -23,6 +23,10 @@ function Header() {
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false)
+  }
+
+  if (navigationLoading || !navigation) {
+    return null
   }
 
   return (
