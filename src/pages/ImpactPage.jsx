@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useContentLoading } from '../hooks/useContentLoading'
 
 const auditChecks = [
   {
@@ -40,6 +41,7 @@ const caseStudies = [
 
 function ImpactPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Impact' }, [])
+  useContentLoading('impact-page', false)
   return (
     <>
       <section className="impact-v2-hero">

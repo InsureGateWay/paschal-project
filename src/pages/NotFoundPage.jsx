@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useContentLoading } from '../hooks/useContentLoading'
 
 function NotFoundPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Not Found' }, [])
+  useContentLoading('not-found-page', false)
   return (
     <section className="section reveal not-found-wrap">
       <div className="container section-header centered">

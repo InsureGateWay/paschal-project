@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useContentLoading } from '../hooks/useContentLoading'
 
 const gappItems = [
   {
@@ -30,6 +31,7 @@ const gappItems = [
 
 function GovernancePrinciplesPage() {
   useEffect(() => { document.title = 'AGLF Foundation | Governance Principles' }, [])
+  useContentLoading('governance-page', false)
   return (
     <>
       <section className="gov-v2-hero reveal">
