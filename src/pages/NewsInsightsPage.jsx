@@ -126,7 +126,7 @@ function NewsInsightsPage() {
               </p>
               <h2>{featured.title}</h2>
               <p>{featured.detail}</p>
-              <Link to="/our-model" className="news-v2-read-link">
+              <Link to="/about#model" className="news-v2-read-link">
                 Read Analysis <span aria-hidden="true"> </span>
               </Link>
             </div>

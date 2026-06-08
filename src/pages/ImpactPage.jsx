@@ -127,7 +127,7 @@ function ImpactPage() {
 
                 <h3>{story.title}</h3>
                 <p>{story.detail}</p>
-                <Link to="/partners" className="impact-v2-story-link">
+                <Link to="/about#partners" className="impact-v2-story-link">
                   Read Full Case Study 
                 </Link>
               </article>
@@ -147,7 +147,7 @@ function ImpactPage() {
             <Link to="/impact" className="aglf-btn">
               2024 Impact Letter
             </Link>
-            <Link to="/partners" className="aglf-btn impact-v2-outline">
+            <Link to="/about#partners" className="aglf-btn impact-v2-outline">
               Audit Reports
             </Link>
           </div>

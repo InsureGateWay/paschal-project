@@ -9,6 +9,10 @@ function Header() {
   const location = useLocation()
   const { data: navigation, loading: navigationLoading } = useContent(getNavigation, fallbackNav)
 
+  const displayedNavigation = navigation?.map(({ children, ...item }) =>
+    item.path === '/about' ? item : { ...item, children },
+  )
+
   const isItemActive = (item) => {
     if (location.pathname === item.path) {
       return true
@@ -50,7 +54,7 @@ function Header() {
 
         <nav className={`main-navigation ${mobileMenuOpen ? 'open' : ''}`} aria-label="Main navigation">
           <ul className="nav-list">
-            {navigation.map((item) => {
+            {displayedNavigation.map((item) => {
               return (
                 <li key={item.path} className={`nav-item ${item.children ? 'has-submenu' : ''}`}>
                   <NavLink

@@ -72,7 +72,7 @@ function HomePage() {
             <Link className="aglf-btn" to={hero.ctaPrimary?.path || '/programs'}>
               {hero.ctaPrimary?.label || 'Explore Programs'}
             </Link>
-            <Link className="aglf-btn secondary" to={hero.ctaSecondary?.path || '/partners'}>
+            <Link className="aglf-btn secondary" to={hero.ctaSecondary?.path || '/about#partners'}>
               {hero.ctaSecondary?.label || 'Funder Network'}
             </Link>
           </div>

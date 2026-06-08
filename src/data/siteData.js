@@ -1,15 +1,6 @@
 export const navigation = [
   { label: 'Home', path: '/' },
-  {
-    label: 'About',
-    path: '/about',
-    children: [
-      { label: 'Governance & Principles', path: '/governance-principles' },
-      { label: 'Leadership', path: '/leadership' },
-      { label: 'Partners', path: '/partners' },
-      { label: 'Our Model', path: '/our-model' },
-    ],
-  },
+  { label: 'About', path: '/about' },
   {
     label: 'Programs',
     path: '/programs',
@@ -22,11 +13,11 @@ export const navigation = [
 
 export const footerLinks = [
   { label: 'Our Mission', path: '/about' },
-  { label: 'Governance', path: '/governance-principles' },
+  { label: 'Governance', path: '/about#governance' },
   { label: 'Education Programs', path: '/programs' },
-  { label: 'Funder Network', path: '/partners' },
-  { label: 'Endowment Model', path: '/our-model' },
-  { label: 'Founders', path: '/leadership' },
+  { label: 'Funder Network', path: '/about#partners' },
+  { label: 'Endowment Model', path: '/about#model' },
+  { label: 'Founders', path: '/about#leadership' },
   { label: 'Impact Metrics', path: '/impact' },
   { label: 'News & Insights', path: '/news-insights' },
   { label: 'Partner With Us', path: '/contribute' },
