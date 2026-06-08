@@ -28,10 +28,9 @@ function SiteLayout() {
       <Header />
       <main className="site-main" aria-busy={!isReady}>
         <Outlet />
+        {!isReady && <LoadingScreen />}
       </main>
       <Footer />
-
-      {!isReady && <LoadingScreen />}
 
       <button type="button" className="chat-orb" aria-label="Open support chat">
         <span className="chat-orb-dot" />
