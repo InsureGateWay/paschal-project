@@ -11,7 +11,7 @@ import { useContentLoadingContext } from '../context/ContentLoadingContext'
  */
 export function useContent(loader, initial = null, deps = []) {
   const { registerLoad, unregisterLoad } = useContentLoadingContext()
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(initial)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
